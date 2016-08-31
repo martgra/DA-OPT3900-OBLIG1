@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleApplication1", "ConsoleApplication1\ConsoleApplication1.csproj", "{9B5779E4-36E0-4C16-8047-18192243C68D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DA-OPT3900-OBLIG1", "ConsoleApplication1\DA-OPT3900-OBLIG1.csproj", "{9B5779E4-36E0-4C16-8047-18192243C68D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
