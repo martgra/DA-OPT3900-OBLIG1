@@ -86,15 +86,6 @@ namespace WindowsFormsApplication1
 
             return bestCost;
         }
-        static int greedyMethod(int[,] array, int cities)
-        {
-            Random rnd = new Random();
-            int totalCost = 0;
-            int[] visited = Enumerable.Range(0, cities).OrderBy(x => rnd.Next()).Take(cities).ToArray();//lager en random sortert array med byer
-            
-            return totalCost;
-        }
-
         private void label2_Click(object sender, EventArgs e)
         {
 
