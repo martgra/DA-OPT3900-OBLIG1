@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -24,7 +24,7 @@ namespace WindowsFormsApplication1
            // array.Text = printGraph(array1, size);
             totalCost.Text = randomMethod(array1, size).ToString();
             minCost.Text = iterativeRandomMethod(array1, size).ToString();
-            greedy.Text = greedyMethod(array1, size).ToString();
+            greedy.Text = greedyRoute(array1).ToString();
         }
         static int[,] generateGraph(int cities)// Metode for å generere matrise 
         {
@@ -67,7 +67,7 @@ namespace WindowsFormsApplication1
         static int iterativeRandomMethod(int[,] array, int cities)
         {
             Random rnd = new Random();
-            int tries = 100;
+            int tries = 5;
             
             int bestCost = Int16.MaxValue;
             while (tries > 0)
@@ -100,9 +100,86 @@ namespace WindowsFormsApplication1
 
 
         }
+        static int improvedRandomMethod(int[,] array, int cities)
+        {
+            return 1;
+        }
+        static int improvedIterativeRadnomMethod(int[,] array, int cities)
+        {
+            return 1;
+        }
 
         private void greedy_Click(object sender, EventArgs e)
         {
+
+        }
+        static int greedyRoute(int[,] cities)
+        {
+            int[] route = new int[cities.GetLength(0)];
+            bool[] connected = new bool[cities.GetLength(0)];
+            int i, j;
+            Random rnd = new Random();
+
+
+            for (i = 0; i < cities.GetLength(0); i++)
+            {
+                route[i] = i;
+                connected[i] = false;
+            }
+
+            i = route[rnd.Next(0, cities.GetLength(0))];
+            route[0] = i;
+            route[i] = 0;
+
+
+            //connected[0] = true;
+            int current = route[0];
+            int min;
+            int next = 1;
+
+            int cost = 0;
+
+            for (i = 0; i < cities.GetLength(0) - 1; i++)
+            {
+                min = -1;
+
+                for (j = 0; j < cities.GetLength(0); j++)
+                {
+                    if (cities[current, j] != 0 && connected[j] == false)
+                    {
+                        if (min == -1)
+                        {
+                            min = cities[current, j];
+                            next = j;
+                        }
+
+                        else if (cities[current, j] < min)
+                        {
+                            min = cities[current, j];
+                            next = j;
+                        }
+                    }
+                }
+
+                if (next != route[i + 1])
+                {
+                    route[cities.GetLength(0) - 1] = i;
+                    route[i + 1] = next;
+                }
+
+                connected[current] = true;
+                current = next;
+            }
+
+            for (i = 0; i < cities.GetLength(0) - 1; i++)
+            {
+                cost += cities[route[i], route[i + 1]];
+            }
+
+            cost += cities[route[cities.GetLength(0) - 1], route[0]];
+
+  
+            return cost;
 
         }
 
