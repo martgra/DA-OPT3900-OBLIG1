@@ -60,7 +60,7 @@ namespace WindowsFormsApplication1
             for (int i = 0; i < (cities - 1); i++)
                 totalCost += array[visited[i], visited[i + 1]];
 
-            totalCost += array[visited[cities - 1], visited[0]];//tilbake til første by
+            totalCost += array[visited[cities - 1], visited[0]];//tilbake til første by ...
 
             return totalCost;
         }
