@@ -36,11 +36,12 @@
             this.numbTries = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.greedy = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(135, 65);
+            this.button1.Location = new System.Drawing.Point(21, 134);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 0;
@@ -51,7 +52,7 @@
             // totalCost
             // 
             this.totalCost.AutoSize = true;
-            this.totalCost.Location = new System.Drawing.Point(252, 182);
+            this.totalCost.Location = new System.Drawing.Point(137, 19);
             this.totalCost.Name = "totalCost";
             this.totalCost.Size = new System.Drawing.Size(0, 13);
             this.totalCost.TabIndex = 2;
@@ -59,7 +60,7 @@
             // minCost
             // 
             this.minCost.AutoSize = true;
-            this.minCost.Location = new System.Drawing.Point(252, 241);
+            this.minCost.Location = new System.Drawing.Point(175, 49);
             this.minCost.Name = "minCost";
             this.minCost.Size = new System.Drawing.Size(0, 13);
             this.minCost.TabIndex = 3;
@@ -67,7 +68,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(68, 182);
+            this.label1.Location = new System.Drawing.Point(18, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 4;
@@ -76,7 +77,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(68, 241);
+            this.label2.Location = new System.Drawing.Point(18, 49);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(130, 13);
             this.label2.TabIndex = 5;
@@ -85,7 +86,7 @@
             // 
             // numbTries
             // 
-            this.numbTries.Location = new System.Drawing.Point(122, 134);
+            this.numbTries.Location = new System.Drawing.Point(196, 137);
             this.numbTries.Name = "numbTries";
             this.numbTries.Size = new System.Drawing.Size(100, 20);
             this.numbTries.TabIndex = 6;
@@ -93,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(132, 118);
+            this.label3.Location = new System.Drawing.Point(193, 121);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 7;
@@ -102,18 +103,29 @@
             // greedy
             // 
             this.greedy.AutoSize = true;
-            this.greedy.Location = new System.Drawing.Point(217, 290);
+            this.greedy.Location = new System.Drawing.Point(18, 76);
             this.greedy.Name = "greedy";
-            this.greedy.Size = new System.Drawing.Size(35, 13);
+            this.greedy.Size = new System.Drawing.Size(39, 13);
             this.greedy.TabIndex = 8;
-            this.greedy.Text = "label4";
+            this.greedy.Text = "greedy";
             this.greedy.Click += new System.EventHandler(this.greedy_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(18, 98);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(35, 13);
+            this.label4.TabIndex = 9;
+            this.label4.Text = "label4";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(353, 383);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.greedy);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.numbTries);
@@ -139,7 +151,6 @@
         private System.Windows.Forms.TextBox numbTries;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label greedy;
-
+        private System.Windows.Forms.Label label4;
     }
 }
-
