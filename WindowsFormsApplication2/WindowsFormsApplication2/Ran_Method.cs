@@ -18,9 +18,15 @@ namespace WindowsFormsApplication2
             {
                 for (int j = 0; j < 20; j++)
                 {
-                    int random = rnd.Next(0, 20);
-                    array[i, j] = random;
-                    array[j, i] = random;
+
+                    if (j != i)
+                    {
+                        int random = rnd.Next(0, 10);
+                        array[i, j] = random;
+                        array[j, i] = random;
+                    }
+                    else
+                        array[i, j] = -1;
                 }
             }
 
