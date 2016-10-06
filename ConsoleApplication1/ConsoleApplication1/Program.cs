@@ -16,7 +16,7 @@ namespace ConsoleApplication1
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    int random = rnd.Next(0, 10);
+                    int random = rnd.Next(1, 11);
                     array[i, j] = random;
                     array[j, i] = random;
                 }
@@ -26,7 +26,7 @@ namespace ConsoleApplication1
             {
                 for (int j = 0; j < 10; j++)
                 {
-                    System.Console.Write("{0, -2}", array[i,j]);
+                    System.Console.Write("{0, -3}", array[i,j]);
                 }
                 System.Console.WriteLine();
             }

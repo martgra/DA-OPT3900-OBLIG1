@@ -25,6 +25,7 @@ namespace WindowsFormsApplication1
             totalCost.Text = randomMethod(array1, size).ToString();
             minCost.Text = iterativeRandomMethod(array1, size).ToString();
             greedy.Text = greedyRoute(array1).ToString();
+            greedyImproved.Text = greedyImproved()
         }
         static int[,] generateGraph(int cities)// Metode for å generere matrise 
         {
@@ -67,7 +68,7 @@ namespace WindowsFormsApplication1
         static int iterativeRandomMethod(int[,] array, int cities)
         {
             Random rnd = new Random();
-            int tries = 5;
+            int tries = 100;
             
             int bestCost = Int16.MaxValue;
             while (tries > 0)
@@ -172,6 +173,35 @@ namespace WindowsFormsApplication1
   
             return cost;
 
+        }
+
+        static int greedyImproved(int[,] cities, int [] route)
+        {
+            bool stop = true;
+            Random rnd = new Random();
+            int cost = 0;
+            while ( stop != true)
+            {
+                int city_1 = rnd.Next(0, cities.GetLength(0) - 1);
+                int city_2 = rnd.Next(0, cities.GetLength(0) - 1);
+                int temp_1 = route[city_1];
+                int temp_2 = route[city_2];
+               
+                route[city_1] = city_2;
+                route[city_2] = city_1;
+
+                for (int i = 0; i < cities.GetLength(0) - 1; i++)
+                {
+                    cost += cities[route[i], route[i + 1]];
+                }
+
+                cost += cities[route[cities.GetLength(0) - 1], route[0]];
+
+
+            }
+
+
+            return cost;
         }
 
     }
