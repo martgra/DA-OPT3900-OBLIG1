@@ -1,0 +1,18 @@
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\bin\Debug\ObligEn.exe.config
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\bin\Debug\ObligEn.exe
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\bin\Debug\ObligEn.pdb
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\obj\Debug\ObligEn.csprojResolveAssemblyReference.cache
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\obj\Debug\ObligEn.Form1.resources
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\obj\Debug\ObligEn.Properties.Resources.resources
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\obj\Debug\ObligEn.csproj.GenerateResource.Cache
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\obj\Debug\ObligEn.exe
+C:\Users\isrema\Documents\Visual Studio 2015\Projects\ObligEn\ObligEn\obj\Debug\ObligEn.pdb
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\bin\Debug\ObligEn.exe.config
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\obj\Debug\ObligEn.exe
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\obj\Debug\ObligEn.pdb
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\bin\Debug\ObligEn.exe
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\bin\Debug\ObligEn.pdb
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\obj\Debug\ObligEn.csprojResolveAssemblyReference.cache
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\obj\Debug\ObligEn.Form1.resources
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\obj\Debug\ObligEn.Properties.Resources.resources
+D:\Documents\Github\DA-OPT3900-OBLIG1\ObligEn\ObligEn\obj\Debug\ObligEn.csproj.GenerateResource.Cache
