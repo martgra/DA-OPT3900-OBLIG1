@@ -8,7 +8,7 @@ namespace ObligEn
 {
     public class GreedyMethod
     {
-        public static int [] greedyRoute(int[,] cities)
+        public static int[] greedyRoute(int[,] cities)
         {
             int[] route = new int[cities.GetLength(0)];
             bool[] connected = new bool[cities.GetLength(0)];
@@ -64,7 +64,7 @@ namespace ObligEn
                 current = next;
             }
 
-        return route;
+            return route;
 
         }
     }
