@@ -19,7 +19,7 @@ namespace ObligEn
                     if (i == j)
                         graph[i, j] = 0;
                     else
-                        graph[j, i] = graph[i, j] = rnd.Next(5, 300);
+                        graph[j, i] = graph[i, j] = rnd.Next(1, 1000);
                 }
             return graph;
         }

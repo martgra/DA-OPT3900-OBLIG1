@@ -8,54 +8,54 @@ namespace ObligEn
 {
     class GreedyItterative
     {
+        internal static object Text;
+
         public static int [] greedyItterative(int [] route, int[,] cities )
         {
-            bool breakCondition = false;
-            //skal bli true hvis break conditions oppnås
+
+            int[] routeCopy = new int[route.GetLength(0)];
+            int length = route.GetLength(0);
+            Array.Copy(route, routeCopy, length);
+
+            int bestResult = CalculateCost.calculateTotalCost(routeCopy, cities);
+            int currentRoute = CalculateCost.calculateTotalCost(routeCopy, cities);
+            
+
             Random rnd = new Random();
-            //oppretter random metode
-            int bestRouteCost = CalculateCost.calculateTotalCost(route, cities);
-            int currentRouteCost;
-            int tempOne = 0;
-            int tempTwo = 0;
-            int cityOne;
-            int cityTwo;
-            int counter = 0;
 
-            while (breakCondition != true)
+            for (int i = 0; i < 1000000; i ++)
             {
-                cityOne = rnd.Next(0, route.GetLength(0));
-                cityTwo = rnd.Next(0, route.GetLength(0));
-                
-                if (cityOne != cityTwo)
+                int cityOne = rnd.Next(0, length);
+                int cityTwo = rnd.Next(0, length);
+
+                if(cityOne != cityTwo)
                 {
-                    tempOne = route[cityOne];
-                    tempTwo = route[cityTwo];
-                    route[cityOne] = tempTwo;
-                    route[cityTwo] = tempOne;
-                }
-                currentRouteCost = CalculateCost.calculateTotalCost(route, cities);
-                if (currentRouteCost < bestRouteCost)
-                {
-                    counter = 0;
-                    bestRouteCost = currentRouteCost;
-                }
-                else
-                {
-                    route[cityOne] = tempOne;
-                    route[cityTwo] = tempTwo;
-                    counter++;
+                    int temp1 = routeCopy[cityOne];
+                    int temp2 = routeCopy[cityTwo];
+
+                    routeCopy[cityOne] = temp2;
+                    routeCopy[cityTwo] = temp1;
+
+                    currentRoute = CalculateCost.calculateTotalCost(routeCopy, cities);
+
+                    if(currentRoute < bestResult)
+                    {
+                        bestResult = currentRoute;
+                    }
+
+                    else
+                    {
+                        routeCopy[cityOne] = temp1;
+                        routeCopy[cityTwo] = temp2;
+                    }
+                    
+
                 }
 
-                if (counter > 1000 )
-                {
-                    breakCondition = true;
-                }
 
             }
-            //skal kjøre Greedy itterative frem til break condtions oppnås
-
-            return route;
+            
+            return routeCopy;
         }        
     }
 }

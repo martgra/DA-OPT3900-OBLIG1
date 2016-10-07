@@ -19,14 +19,49 @@ namespace ObligEn
 
         private void buttonCalculate_Click(object sender, EventArgs e)
         {
-            int cites = Convert.ToInt32(numberOfCities.Text);
-            int[,] array1 = GenerateGraph.generateGraph(cites);
-            randomResult.Text = CalculateCost.calculateTotalCost((RandomMethod.randMethod(array1, cites)), array1).ToString();
-            itRandomResult.Text = CalculateCost.calculateTotalCost((RandomItterativeMethod.iterativeRndMethod(array1, cites)), array1).ToString();
-            greedyResult.Text = CalculateCost.calculateTotalCost((GreedyMethod.greedyRoute(array1)),array1).ToString();
 
-            
+            if(numberOfCities.Text != "")
+            {
+                int cities = Convert.ToInt32(numberOfCities.Text);
+                int[,] array1 = GenerateGraph.generateGraph(cities);
+
+                int[] randomRoute = RandomMethod.randMethod(array1, cities);
+                int[] randomIntterativeRoute = RandomItterativeMethod.iterativeRndMethod(array1, cities);
+                int[] greedyRoute = GreedyMethod.greedyRoute(array1);
+                int[] greedyItterativeRoute = GreedyItterative.greedyItterative(greedyRoute, array1);
+                int[] GreedyItterativeRandom = GreedyItterative.greedyItterative(randomRoute, array1);
+                int[] GreedyItterativeRandomItterative = GreedyItterative.greedyItterative(randomIntterativeRoute, array1);
+
+                randomResult.Text = CalculateCost.calculateTotalCost(randomRoute, array1).ToString();
+                itRandomResult.Text = CalculateCost.calculateTotalCost(randomIntterativeRoute, array1).ToString();
+                greedyResult.Text = CalculateCost.calculateTotalCost(greedyRoute, array1).ToString();
+                GreedyItterativeResult.Text = CalculateCost.calculateTotalCost(greedyItterativeRoute, array1).ToString();
+                GRandomInputResult.Text = CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1).ToString();
+                GRandomItterativeResult.Text = CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1).ToString();
+
+
+
+            }
         }
-        
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
