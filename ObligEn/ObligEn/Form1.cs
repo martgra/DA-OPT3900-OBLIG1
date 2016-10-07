@@ -32,12 +32,7 @@ namespace ObligEn
                 int[] GreedyItterativeRandom = GreedyItterative.greedyItterative(randomRoute, array1);
                 int[] GreedyItterativeRandomItterative = GreedyItterative.greedyItterative(randomIntterativeRoute, array1);
 
-                randomResult.Text = CalculateCost.calculateTotalCost(randomRoute, array1).ToString();
-                itRandomResult.Text = CalculateCost.calculateTotalCost(randomIntterativeRoute, array1).ToString();
-                greedyResult.Text = CalculateCost.calculateTotalCost(greedyRoute, array1).ToString();
-                GreedyItterativeResult.Text = CalculateCost.calculateTotalCost(greedyItterativeRoute, array1).ToString();
-                GRandomInputResult.Text = CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1).ToString();
-                GRandomItterativeResult.Text = CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1).ToString();
+                
 
                 int itteration = 1000;
                 int[] randomMethod = new int[itteration];
@@ -52,7 +47,20 @@ namespace ObligEn
                 double greedyItterativeGreedyMean = 0;
                 double greedyItterativeRandomMean = 0;
                 double greedyItterativeItterativeRandomMean = 0;
-                
+                int randomMethodBest = 0;
+                int randomItterativeMethodBest = 0;
+                int greedyMethodBest = 0;
+                int greedyItterativeGreedyBest = 0;
+                int greedyItterativeRandomBest = 0;
+                int greedyItterativeItterativeRandomBest = 0;
+
+                randomMethodBest = CalculateCost.calculateTotalCost(randomRoute, array1);
+                randomItterativeMethodBest = CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
+                greedyMethodBest = CalculateCost.calculateTotalCost(greedyRoute, array1);
+                greedyItterativeGreedyBest = CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
+                greedyItterativeRandomBest = CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
+                greedyItterativeItterativeRandomBest = CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
+
                 for (int i = 0; i < itteration; i++)
                 {
                     randomRoute = RandomMethod.randMethod(array1, cities);
@@ -64,21 +72,49 @@ namespace ObligEn
 
                     randomMethod[i] = CalculateCost.calculateTotalCost(randomRoute, array1);
                     randomMethodMean = randomMethodMean + CalculateCost.calculateTotalCost(randomRoute, array1);
+                    if (randomMethodBest > CalculateCost.calculateTotalCost(randomRoute, array1))
+                    {
+                        randomMethodBest = CalculateCost.calculateTotalCost(randomRoute, array1);
+                    }
 
                     randomItterativeMethod[i] = CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
                     randomItterativeMethodMean = randomItterativeMethodMean + CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
+                    if (randomItterativeMethodBest > CalculateCost.calculateTotalCost(randomIntterativeRoute, array1))
+                    {
+                        randomItterativeMethodBest = CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
+                    }
+
 
                     greedyMethod[i] = CalculateCost.calculateTotalCost(greedyRoute, array1);
                     greedyMethodMean = greedyMethodMean + CalculateCost.calculateTotalCost(greedyRoute, array1);
+                    if (greedyMethodBest > CalculateCost.calculateTotalCost(greedyRoute, array1))
+                    {
+                        greedyMethodBest = CalculateCost.calculateTotalCost(greedyRoute, array1);
+                    }
+
 
                     greedyItterativeGreedy[i] = CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
                     greedyItterativeGreedyMean = greedyItterativeGreedyMean + CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
+                    if (greedyItterativeGreedyBest > CalculateCost.calculateTotalCost(greedyItterativeRoute, array1))
+                    {
+                        greedyItterativeGreedyBest = CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
+                    }
 
                     greedyItterativeRandom[i] = CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
                     greedyItterativeRandomMean = greedyItterativeRandomMean + CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
+                    if (greedyItterativeRandomBest > CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1))
+                    {
+                        greedyItterativeRandomBest = CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
+                    }
+
 
                     greedyItterativeRandomItterative[i] = CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
                     greedyItterativeItterativeRandomMean = greedyItterativeItterativeRandomMean + CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
+
+                    if (greedyItterativeItterativeRandomBest > CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1))
+                    {
+                        greedyItterativeItterativeRandomBest = CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
+                    }
                 }
 
                 randomMethodMean = randomMethodMean/itteration;
@@ -87,6 +123,13 @@ namespace ObligEn
                 greedyItterativeGreedyMean = greedyItterativeGreedyMean/itteration;
                 greedyItterativeRandomMean = greedyItterativeRandomMean/itteration;
                 greedyItterativeItterativeRandomMean = greedyItterativeItterativeRandomMean/itteration;
+
+                randomResult.Text = randomMethodBest.ToString();
+                itRandomResult.Text = randomItterativeMethodBest.ToString();
+                greedyResult.Text = greedyMethodBest.ToString();
+                GreedyItterativeResult.Text = greedyItterativeGreedyBest.ToString();
+                GRandomInputResult.Text = greedyItterativeRandomBest.ToString();
+                GRandomItterativeResult.Text = greedyItterativeItterativeRandomBest.ToString();
 
                 RandomMean.Text = randomMethodMean.ToString();
                 RandomItterativeMean.Text = randomItterativeMethodMean.ToString();
