@@ -42,6 +42,12 @@
             this.GRandomInputResult = new System.Windows.Forms.Label();
             this.GRandomItterativeInput = new System.Windows.Forms.Label();
             this.GRandomItterativeResult = new System.Windows.Forms.Label();
+            this.RandomMean = new System.Windows.Forms.Label();
+            this.RandomItterativeMean = new System.Windows.Forms.Label();
+            this.GreedyMean = new System.Windows.Forms.Label();
+            this.GreedyItterativeGreedyMean = new System.Windows.Forms.Label();
+            this.GreedyItterativeRandomMean = new System.Windows.Forms.Label();
+            this.GreedyItterativeRandomItterativeMean = new System.Windows.Forms.Label();
             labRandomMethod = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -171,16 +177,72 @@
             this.GRandomItterativeResult.TabIndex = 10;
             this.GRandomItterativeResult.Click += new System.EventHandler(this.label6_Click);
             // 
+            // label1
+            // 
+            this.RandomMean.AutoSize = true;
+            this.RandomMean.Location = new System.Drawing.Point(377, 44);
+            this.RandomMean.Name = "label1";
+            this.RandomMean.Size = new System.Drawing.Size(0, 13);
+            this.RandomMean.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.RandomItterativeMean.AutoSize = true;
+            this.RandomItterativeMean.Location = new System.Drawing.Point(377, 67);
+            this.RandomItterativeMean.Name = "label4";
+            this.RandomItterativeMean.Size = new System.Drawing.Size(0, 13);
+            this.RandomItterativeMean.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.GreedyMean.AutoSize = true;
+            this.GreedyMean.Location = new System.Drawing.Point(377, 91);
+            this.GreedyMean.Name = "label5";
+            this.GreedyMean.Size = new System.Drawing.Size(0, 13);
+            this.GreedyMean.TabIndex = 10;
+            // 
+            // label6
+            // 
+            this.GreedyItterativeGreedyMean.AutoSize = true;
+            this.GreedyItterativeGreedyMean.Location = new System.Drawing.Point(377, 112);
+            this.GreedyItterativeGreedyMean.Name = "label6";
+            this.GreedyItterativeGreedyMean.Size = new System.Drawing.Size(0, 13);
+            this.GreedyItterativeGreedyMean.TabIndex = 10;
+            // 
+            // label7
+            // 
+            this.GreedyItterativeRandomMean.AutoSize = true;
+            this.GreedyItterativeRandomMean.Location = new System.Drawing.Point(377, 135);
+            this.GreedyItterativeRandomMean.Name = "label7";
+            this.GreedyItterativeRandomMean.Size = new System.Drawing.Size(0, 13);
+            this.GreedyItterativeRandomMean.TabIndex = 10;
+            this.GreedyItterativeRandomMean.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label8
+            // 
+            this.GreedyItterativeRandomItterativeMean.AutoSize = true;
+            this.GreedyItterativeRandomItterativeMean.Location = new System.Drawing.Point(377, 161);
+            this.GreedyItterativeRandomItterativeMean.Name = "label8";
+            this.GreedyItterativeRandomItterativeMean.Size = new System.Drawing.Size(0, 13);
+            this.GreedyItterativeRandomItterativeMean.TabIndex = 10;
+            this.GreedyItterativeRandomItterativeMean.Click += new System.EventHandler(this.label6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 273);
+            this.ClientSize = new System.Drawing.Size(548, 273);
+            this.Controls.Add(this.GreedyItterativeRandomItterativeMean);
             this.Controls.Add(this.GRandomItterativeResult);
+            this.Controls.Add(this.GreedyItterativeRandomMean);
             this.Controls.Add(this.GRandomInputResult);
+            this.Controls.Add(this.GreedyItterativeGreedyMean);
             this.Controls.Add(this.GreedyItterativeResult);
+            this.Controls.Add(this.GreedyMean);
             this.Controls.Add(this.greedyResult);
+            this.Controls.Add(this.RandomItterativeMean);
             this.Controls.Add(this.itRandomResult);
+            this.Controls.Add(this.RandomMean);
             this.Controls.Add(this.randomResult);
             this.Controls.Add(this.GRandomItterativeInput);
             this.Controls.Add(this.GRandomInput);
@@ -211,6 +273,12 @@
         private System.Windows.Forms.Label GRandomInputResult;
         private System.Windows.Forms.Label GRandomItterativeInput;
         private System.Windows.Forms.Label GRandomItterativeResult;
+        private System.Windows.Forms.Label RandomMean;
+        private System.Windows.Forms.Label RandomItterativeMean;
+        private System.Windows.Forms.Label GreedyMean;
+        private System.Windows.Forms.Label GreedyItterativeGreedyMean;
+        private System.Windows.Forms.Label GreedyItterativeRandomMean;
+        private System.Windows.Forms.Label GreedyItterativeRandomItterativeMean;
     }
 }
 

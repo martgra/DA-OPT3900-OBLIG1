@@ -23,7 +23,7 @@ namespace ObligEn
 
             Random rnd = new Random();
 
-            for (int i = 0; i < 1000000; i ++)
+            for (int i = 0; i < 100; i ++)
             {
                 int cityOne = rnd.Next(0, length);
                 int cityTwo = rnd.Next(0, length);
