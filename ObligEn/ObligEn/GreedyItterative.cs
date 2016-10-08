@@ -16,7 +16,7 @@ namespace ObligEn
 
             int[] routeCopy = new int[route.GetLength(0)];
             // oppretter tabell som ruten skal kopieres over i. Opprettet pga problemer med referanse til objektet
-            int itteration = 100;
+            int itteration = 10000;
             //antall ganger metoden skal forsøke å finne bedre rute.
             int length = route.GetLength(0);
             // får lengde på ruten
