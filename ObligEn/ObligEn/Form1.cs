@@ -17,6 +17,7 @@ namespace ObligEn
             InitializeComponent();
         }
 
+        //
         public void buttonCalculate_Click(object sender, EventArgs e)
         {
 
