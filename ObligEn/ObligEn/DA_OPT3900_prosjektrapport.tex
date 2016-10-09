@@ -1,5 +1,6 @@
-\documentclass[notitlepage]{report}
+\documentclass[notitlepage]{article}
 \usepackage[left=1in, right=1in, top=1in, bottom=1in]{geometry}
+\usepackage{fancyhdr}
 
 \usepackage{titling}
 \usepackage{lipsum}
@@ -10,14 +11,26 @@
 \postauthor{\end{center}}
 \predate{\par\large\centering}
 \postdate{\par}
+\pagestyle{fancy}
+\fancyfoot{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\lhead{DA-OPT 3900: PROSJEKTRAPPORT FOR OBLIGATORISK OPPGAVE 1}
+\rhead{}
 
-\title{Prosjektrapport for obligatorisk oppgave 1 i DA-OPT 3900}
+
+\title{DA-OPT 3900:\\Prosjektrapport for obligatorisk oppgave 1}
 \author{Amer Sisic, Thor-Stian Follstad og Martin Gran}
 \date{\today}
+\renewcommand*\contentsname{Innholdsfortegnelse}
+
+
 \begin{document}
+% setter starten på seksjoner
+\setcounter{section}{1}
 
 \maketitle
-\thispagestyle{empty}
+\thispagestyle{myheadings}
 \vspace{\fill}
 \begin{abstract}
 This project report describes the implementation of together four different algorithms of the "Travelling salesman problem" (TSP).
@@ -30,14 +43,21 @@ methods. Last the different solutions are run 100 times at the same graph. The b
 \\ \\ \\ \\ \\ \\ \\ \\ \\
 \end{abstract}
 \vspace{\fill}
+\pagebreak
+\thispagestyle{empty}%
+\tableofcontents
+\pagebreak
+\addcontentsline{toc}{section}{1 Innledning}
+\indent Denne prosjektrapporten beskriver fire forskjellige implementasjoner av algoritmer for å løse "Travelling Salesman problem" (TSP).
 
+\pagebreak
 %\section*{First bit}
 %If you want to ramp your text straight onto the title page, start the text at 
 %something that does not cause a page break, like a section.  Here's a handy 
 %place to introduce some of your woofy conventions, like quotes in equations.
 
-\chapter{New Page}
+\section{Teoretisk bakgrunn}
+\subsection{Travelling Salesman problemet}
 A new chapter starts a new page.  
 \end{document}
-
 % set font \fontfamily{qcr}\selectfont
