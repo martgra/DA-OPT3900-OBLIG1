@@ -17,6 +17,7 @@ namespace ObligEn
             InitializeComponent();
         }
 
+
         //
         public void buttonCalculate_Click(object sender, EventArgs e)
         {
@@ -46,7 +47,7 @@ namespace ObligEn
                 #### Variabler til bruk for utredning av snitt og beste resultat ####
                 */
 
-                int itteration = 1000;
+                int itteration = 100;
                 //antall itterasjoner som skal kjøres i forløkken for å regne ut beste resultat og snitt.
                 int[] randomMethod = new int[itteration];
                 //tabell for å lagre alle "tries" for random metode. Pr nå redundent
