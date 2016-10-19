@@ -47,7 +47,7 @@ namespace ObligEn
                 #### Variabler til bruk for utredning av snitt og beste resultat ####
                 */
 
-                int itteration = 100;
+                int itteration = 1000;
                 //antall itterasjoner som skal kjøres i forløkken for å regne ut beste resultat og snitt.
                 int[] randomMethod = new int[itteration];
                 //tabell for å lagre alle "tries" for random metode. Pr nå redundent
@@ -114,7 +114,7 @@ namespace ObligEn
                     // returnerer ny rute fra Random metode med argument antall byer og generert graf.
                     randomMethod[i] = CalculateCost.calculateTotalCost(randomRoute, array1);
                     // lagrer resultatet på posisjon i i tabell. Pr nå redundent
-                    randomMethodMean = randomMethodMean + CalculateCost.calculateTotalCost(randomRoute, array1);
+                   // randomMethodMean = randomMethodMean + CalculateCost.calculateTotalCost(randomRoute, array1);
                     // legger til kostnaden i variabel for å regne ut snitt. 
                     if (randomMethodBest > CalculateCost.calculateTotalCost(randomRoute, array1))
                     {
@@ -126,7 +126,7 @@ namespace ObligEn
                     // returnerer ny rute fra Random Itterativ metode med argument antall byer og generert graf.
                     randomItterativeMethod[i] = CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
                     // lagrer resultatet på posisjon i i tabell. Pr nå redundent
-                    randomItterativeMethodMean = randomItterativeMethodMean + CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
+                   // randomItterativeMethodMean = randomItterativeMethodMean + CalculateCost.calculateTotalCost(randomIntterativeRoute, array1);
                     // legger til kostnaden i variabel for å regne ut snitt. 
                     if (randomItterativeMethodBest > CalculateCost.calculateTotalCost(randomIntterativeRoute, array1))
                     {
@@ -139,7 +139,7 @@ namespace ObligEn
                     // returnerer ny rute fra Greedy metode med argument generert graf.
                     greedyMethod[i] = CalculateCost.calculateTotalCost(greedyRoute, array1);
                     // lagrer resultatet på posisjon i i tabell. Pr nå redundent
-                    greedyMethodMean = greedyMethodMean + CalculateCost.calculateTotalCost(greedyRoute, array1);
+                    //greedyMethodMean = greedyMethodMean + CalculateCost.calculateTotalCost(greedyRoute, array1);
                     // legger til kostnaden i variabel for å regne ut snitt. 
                     if (greedyMethodBest > CalculateCost.calculateTotalCost(greedyRoute, array1))
                     {
@@ -152,7 +152,7 @@ namespace ObligEn
                     // returnerer ny rute fra Greedy Itterativ metode med argument rute fra Greedy metode og generert graf.
                     greedyItterativeGreedy[i] = CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
                     // lagrer resultatet på posisjon i i tabell. Pr nå redundent
-                    greedyItterativeGreedyMean = greedyItterativeGreedyMean + CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
+                    //greedyItterativeGreedyMean = greedyItterativeGreedyMean + CalculateCost.calculateTotalCost(greedyItterativeRoute, array1);
                     // legger til kostnaden i variabel for å regne ut snitt. 
                     if (greedyItterativeGreedyBest > CalculateCost.calculateTotalCost(greedyItterativeRoute, array1))
                     {
@@ -164,7 +164,7 @@ namespace ObligEn
                     // returnerer ny rute fra Greedy Itterativ metode med argument rute fra Random metode og generert graf.
                     greedyItterativeRandom[i] = CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
                     // lagrer resultatet på posisjon i i tabell. Pr nå redundent
-                    greedyItterativeRandomMean = greedyItterativeRandomMean + CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
+                    //greedyItterativeRandomMean = greedyItterativeRandomMean + CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1);
                     // legger til kostnaden i variabel for å regne ut snitt. 
                     if (greedyItterativeRandomBest > CalculateCost.calculateTotalCost(GreedyItterativeRandom, array1))
                     {
@@ -177,7 +177,7 @@ namespace ObligEn
                     // returnerer ny rute fra Greedy Itterativ metode med argument rute fra Random Itterativ metode og generert graf.
                     greedyItterativeRandomItterative[i] = CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
                     // lagrer resultatet på posisjon i i tabell. Pr nå redundent
-                    greedyItterativeItterativeRandomMean = greedyItterativeItterativeRandomMean + CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
+                    //greedyItterativeItterativeRandomMean = greedyItterativeItterativeRandomMean + CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1);
                     // legger til kostnaden i variabel for å regne ut snitt. 
                     if (greedyItterativeItterativeRandomBest > CalculateCost.calculateTotalCost(GreedyItterativeRandomItterative, array1))
                     {
@@ -190,12 +190,32 @@ namespace ObligEn
                 /*
                  #### Utredning av gjennomsnitt ####
                  */
-                randomMethodMean = randomMethodMean/itteration;
-                randomItterativeMethodMean = randomItterativeMethodMean/itteration;
-                greedyMethodMean = greedyMethodMean/itteration;
-                greedyItterativeGreedyMean = greedyItterativeGreedyMean/itteration;
-                greedyItterativeRandomMean = greedyItterativeRandomMean/itteration;
-                greedyItterativeItterativeRandomMean = greedyItterativeItterativeRandomMean/itteration;
+                randomMethodMean = randomMethod.Average();
+                double randomSumOfSquaresOfDifferences = randomMethod.Select(val => (val - randomMethodMean) * (val - randomMethodMean)).Sum();
+                double randomSd = Math.Sqrt(randomSumOfSquaresOfDifferences / randomMethod.Length);
+
+                randomItterativeMethodMean = randomItterativeMethod.Average();
+                double RandomItterativesumOfSquaresOfDifferences = randomItterativeMethod.Select(val => (val - randomItterativeMethodMean) * (val - randomItterativeMethodMean)).Sum();
+                double rItterativeSd = Math.Sqrt(RandomItterativesumOfSquaresOfDifferences / randomItterativeMethod.Length);
+
+                greedyMethodMean = greedyMethod.Average();
+                double GreedysumOfSquaresOfDifferences = greedyMethod.Select(val => (val - greedyMethodMean) * (val - greedyMethodMean)).Sum();
+                double GSd = Math.Sqrt(GreedysumOfSquaresOfDifferences / greedyMethod.Length);
+
+
+                greedyItterativeGreedyMean = greedyItterativeGreedy.Average();
+                double GIGsumOfSquaresOfDifferences = greedyItterativeGreedy.Select(val => (val - greedyItterativeGreedyMean) * (val - greedyItterativeGreedyMean)).Sum();
+                double GIGsd = Math.Sqrt(GIGsumOfSquaresOfDifferences / greedyItterativeGreedy.Length);
+
+                greedyItterativeRandomMean = greedyItterativeRandom.Average();
+                double GIRsumOfSquaresOfDifferences = greedyItterativeRandom.Select(val => (val - greedyItterativeRandomMean) * (val - greedyItterativeRandomMean)).Sum();
+                double GIRsd = Math.Sqrt(GIRsumOfSquaresOfDifferences / greedyItterativeRandom.Length);
+
+                greedyItterativeItterativeRandomMean = greedyItterativeRandomItterative.Average();
+                double GIIRsumOfSquaresOfDifferences = greedyItterativeRandomItterative.Select(val => (val - greedyItterativeItterativeRandomMean) * (val - greedyItterativeItterativeRandomMean)).Sum();
+                double GIIRsd = Math.Sqrt(GIIRsumOfSquaresOfDifferences / greedyItterativeRandomItterative.Length);
+           
+
 
                 /*
                  #### Oppdaterer tekst for beste resultat ####
@@ -218,6 +238,57 @@ namespace ObligEn
                 GreedyItterativeRandomMean.Text = greedyItterativeRandomMean.ToString();
                 GreedyItterativeRandomItterativeMean.Text = greedyItterativeItterativeRandomMean.ToString();
 
+                RandomMethodSd.Text = randomSd.ToString();
+                RandomItterativeSd.Text = rItterativeSd.ToString();
+                GreedySd.Text = GSd.ToString();
+                GreedyImprovedGreedySd.Text = GIGsd.ToString();
+                GreedyImprovedRandomSd.Text = GIRsd.ToString();
+                GreedyImprovedRandomItterativeSd.Text = GIIRsd.ToString();
+
+                using (System.IO.StreamWriter file =
+                new System.IO.StreamWriter(@"\test.txt", true))
+                {
+                    
+                    
+                    file.WriteLine("randomMethod Best: " + randomMethodBest.ToString());
+                    file.WriteLine("randomMethod mean: " + randomMethodMean.ToString());
+                    file.WriteLine("randomMethod SD: " + randomSd.ToString());
+
+                    file.WriteLine("\n");
+
+                    file.WriteLine("randomItterativeMethod Best: " + randomItterativeMethodBest.ToString());
+                    file.WriteLine("randomItterativeMethod mean: " + randomItterativeMethodMean.ToString());
+                    file.WriteLine("randomItterativeMethod SD: " + rItterativeSd.ToString());
+
+                    file.WriteLine("\n");
+
+                    file.WriteLine("greedyMethod Best: " + greedyMethodBest.ToString());
+                    file.WriteLine("greedyMethod mean: " + greedyMethodMean.ToString());
+                    file.WriteLine("greedyMethod SD: " + GSd.ToString());
+
+                    file.WriteLine("\n");
+
+                    file.WriteLine("GreedyItterativeGreedy Best: " + greedyItterativeGreedyBest.ToString());
+                    file.WriteLine("GreedyItterativeGreedy mean: " + greedyItterativeGreedyMean.ToString());
+                    file.WriteLine("GreedyItterativeGreedy SD: " + GIGsd.ToString());
+
+                    file.WriteLine("\n");
+
+                    file.WriteLine("greedyItterativeRandom Best: " + greedyItterativeRandomBest.ToString());
+                    file.WriteLine("greedyItterativeRandom mean: " + greedyItterativeRandomMean.ToString());
+                    file.WriteLine("greedyItterativeRandom SD: " + GIRsd.ToString());
+
+                    file.WriteLine("\n");
+
+                    file.WriteLine(" greedyItterativeItterativeRandom Best: " + greedyItterativeItterativeRandomBest.ToString());
+                    file.WriteLine(" greedyItterativeItterativeRandom mean: " + greedyItterativeItterativeRandomMean.ToString());
+                    file.WriteLine("greedyItterativeItterativeRandom SD: " + GIIRsd.ToString());
+
+                    file.WriteLine("\n");
+
+                }
+
+              
 
 
 
