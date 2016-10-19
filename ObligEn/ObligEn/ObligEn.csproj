@@ -75,7 +75,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="DA_OPT3900_prosjektrapport.tex" />
+    <None Include="DA-OPT3900_Oblig1_rapport.pdf" />
+    <None Include="DA-OPT3900_Oblig1_rapport.tex" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

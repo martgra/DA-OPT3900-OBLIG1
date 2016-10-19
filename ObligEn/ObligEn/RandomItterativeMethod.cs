@@ -11,7 +11,7 @@ namespace ObligEn
         public static int[] iterativeRndMethod(int[,] array, int cities)
         {
             Random rnd = new Random();
-            int tries = 5;
+            int tries = 10000;
             int bestValue = Int32.MaxValue;
             int[] bestRoute = new int[cities];
             while (tries > 0)

@@ -23,7 +23,7 @@ namespace ObligEn
                     if (i == j)
                         graph[i, j] = 0;
                     else
-                        graph[j, i] = graph[i, j] = rnd.Next(1, 1000);
+                        graph[j, i] = graph[i, j] = rnd.Next(1, 10);
                         // definerer hvilke verdier som skal fylles inn på gitt posisjon
                 }
             return graph;
