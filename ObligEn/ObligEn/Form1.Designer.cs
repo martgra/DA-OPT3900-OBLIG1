@@ -48,6 +48,12 @@
             this.GreedyItterativeGreedyMean = new System.Windows.Forms.Label();
             this.GreedyItterativeRandomMean = new System.Windows.Forms.Label();
             this.GreedyItterativeRandomItterativeMean = new System.Windows.Forms.Label();
+            this.RandomMethodSd = new System.Windows.Forms.Label();
+            this.RandomItterativeSd = new System.Windows.Forms.Label();
+            this.GreedySd = new System.Windows.Forms.Label();
+            this.GreedyImprovedGreedySd = new System.Windows.Forms.Label();
+            this.GreedyImprovedRandomSd = new System.Windows.Forms.Label();
+            this.GreedyImprovedRandomItterativeSd = new System.Windows.Forms.Label();
             labRandomMethod = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
             label3 = new System.Windows.Forms.Label();
@@ -177,55 +183,103 @@
             this.GRandomItterativeResult.TabIndex = 10;
             this.GRandomItterativeResult.Click += new System.EventHandler(this.label6_Click);
             // 
-            // label1
+            // RandomMean
             // 
             this.RandomMean.AutoSize = true;
             this.RandomMean.Location = new System.Drawing.Point(377, 44);
-            this.RandomMean.Name = "label1";
+            this.RandomMean.Name = "RandomMean";
             this.RandomMean.Size = new System.Drawing.Size(0, 13);
             this.RandomMean.TabIndex = 8;
             // 
-            // label4
+            // RandomItterativeMean
             // 
             this.RandomItterativeMean.AutoSize = true;
             this.RandomItterativeMean.Location = new System.Drawing.Point(377, 67);
-            this.RandomItterativeMean.Name = "label4";
+            this.RandomItterativeMean.Name = "RandomItterativeMean";
             this.RandomItterativeMean.Size = new System.Drawing.Size(0, 13);
             this.RandomItterativeMean.TabIndex = 9;
             // 
-            // label5
+            // GreedyMean
             // 
             this.GreedyMean.AutoSize = true;
             this.GreedyMean.Location = new System.Drawing.Point(377, 91);
-            this.GreedyMean.Name = "label5";
+            this.GreedyMean.Name = "GreedyMean";
             this.GreedyMean.Size = new System.Drawing.Size(0, 13);
             this.GreedyMean.TabIndex = 10;
             // 
-            // label6
+            // GreedyItterativeGreedyMean
             // 
             this.GreedyItterativeGreedyMean.AutoSize = true;
             this.GreedyItterativeGreedyMean.Location = new System.Drawing.Point(377, 112);
-            this.GreedyItterativeGreedyMean.Name = "label6";
+            this.GreedyItterativeGreedyMean.Name = "GreedyItterativeGreedyMean";
             this.GreedyItterativeGreedyMean.Size = new System.Drawing.Size(0, 13);
             this.GreedyItterativeGreedyMean.TabIndex = 10;
             // 
-            // label7
+            // GreedyItterativeRandomMean
             // 
             this.GreedyItterativeRandomMean.AutoSize = true;
             this.GreedyItterativeRandomMean.Location = new System.Drawing.Point(377, 135);
-            this.GreedyItterativeRandomMean.Name = "label7";
+            this.GreedyItterativeRandomMean.Name = "GreedyItterativeRandomMean";
             this.GreedyItterativeRandomMean.Size = new System.Drawing.Size(0, 13);
             this.GreedyItterativeRandomMean.TabIndex = 10;
             this.GreedyItterativeRandomMean.Click += new System.EventHandler(this.label4_Click);
             // 
-            // label8
+            // GreedyItterativeRandomItterativeMean
             // 
             this.GreedyItterativeRandomItterativeMean.AutoSize = true;
             this.GreedyItterativeRandomItterativeMean.Location = new System.Drawing.Point(377, 161);
-            this.GreedyItterativeRandomItterativeMean.Name = "label8";
+            this.GreedyItterativeRandomItterativeMean.Name = "GreedyItterativeRandomItterativeMean";
             this.GreedyItterativeRandomItterativeMean.Size = new System.Drawing.Size(0, 13);
             this.GreedyItterativeRandomItterativeMean.TabIndex = 10;
             this.GreedyItterativeRandomItterativeMean.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label1
+            // 
+            this.RandomMethodSd.AutoSize = true;
+            this.RandomMethodSd.Location = new System.Drawing.Point(449, 44);
+            this.RandomMethodSd.Name = "label1";
+            this.RandomMethodSd.Size = new System.Drawing.Size(0, 13);
+            this.RandomMethodSd.TabIndex = 8;
+            // 
+            // label4
+            // 
+            this.RandomItterativeSd.AutoSize = true;
+            this.RandomItterativeSd.Location = new System.Drawing.Point(449, 67);
+            this.RandomItterativeSd.Name = "label4";
+            this.RandomItterativeSd.Size = new System.Drawing.Size(0, 13);
+            this.RandomItterativeSd.TabIndex = 8;
+            // 
+            // label5
+            // 
+            this.GreedySd.AutoSize = true;
+            this.GreedySd.Location = new System.Drawing.Point(449, 90);
+            this.GreedySd.Name = "label5";
+            this.GreedySd.Size = new System.Drawing.Size(0, 13);
+            this.GreedySd.TabIndex = 8;
+            // 
+            // label6
+            // 
+            this.GreedyImprovedGreedySd.AutoSize = true;
+            this.GreedyImprovedGreedySd.Location = new System.Drawing.Point(449, 113);
+            this.GreedyImprovedGreedySd.Name = "label6";
+            this.GreedyImprovedGreedySd.Size = new System.Drawing.Size(0, 13);
+            this.GreedyImprovedGreedySd.TabIndex = 8;
+            // 
+            // label7
+            // 
+            this.GreedyImprovedRandomSd.AutoSize = true;
+            this.GreedyImprovedRandomSd.Location = new System.Drawing.Point(449, 135);
+            this.GreedyImprovedRandomSd.Name = "label7";
+            this.GreedyImprovedRandomSd.Size = new System.Drawing.Size(0, 13);
+            this.GreedyImprovedRandomSd.TabIndex = 8;
+            // 
+            // label8
+            // 
+            this.GreedyImprovedRandomItterativeSd.AutoSize = true;
+            this.GreedyImprovedRandomItterativeSd.Location = new System.Drawing.Point(449, 161);
+            this.GreedyImprovedRandomItterativeSd.Name = "label8";
+            this.GreedyImprovedRandomItterativeSd.Size = new System.Drawing.Size(0, 13);
+            this.GreedyImprovedRandomItterativeSd.TabIndex = 8;
             // 
             // Form1
             // 
@@ -242,6 +296,12 @@
             this.Controls.Add(this.greedyResult);
             this.Controls.Add(this.RandomItterativeMean);
             this.Controls.Add(this.itRandomResult);
+            this.Controls.Add(this.GreedyImprovedRandomItterativeSd);
+            this.Controls.Add(this.GreedyImprovedRandomSd);
+            this.Controls.Add(this.GreedyImprovedGreedySd);
+            this.Controls.Add(this.GreedySd);
+            this.Controls.Add(this.RandomItterativeSd);
+            this.Controls.Add(this.RandomMethodSd);
             this.Controls.Add(this.RandomMean);
             this.Controls.Add(this.randomResult);
             this.Controls.Add(this.GRandomItterativeInput);
@@ -279,6 +339,12 @@
         private System.Windows.Forms.Label GreedyItterativeGreedyMean;
         private System.Windows.Forms.Label GreedyItterativeRandomMean;
         private System.Windows.Forms.Label GreedyItterativeRandomItterativeMean;
+        private System.Windows.Forms.Label RandomMethodSd;
+        private System.Windows.Forms.Label RandomItterativeSd;
+        private System.Windows.Forms.Label GreedySd;
+        private System.Windows.Forms.Label GreedyImprovedGreedySd;
+        private System.Windows.Forms.Label GreedyImprovedRandomSd;
+        private System.Windows.Forms.Label GreedyImprovedRandomItterativeSd;
     }
 }
 

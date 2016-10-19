@@ -191,11 +191,30 @@ namespace ObligEn
                  #### Utredning av gjennomsnitt ####
                  */
                 randomMethodMean = randomMethodMean/itteration;
+                double randomSumOfSquaresOfDifferences = randomMethod.Select(val => (val - randomMethodMean) * (val - randomMethodMean)).Sum();
+                double randomSd = Math.Sqrt(randomSumOfSquaresOfDifferences / randomMethod.Length);
+
                 randomItterativeMethodMean = randomItterativeMethodMean/itteration;
+                double RandomItterativesumOfSquaresOfDifferences = randomItterativeMethod.Select(val => (val - randomItterativeMethodMean) * (val - randomItterativeMethodMean)).Sum();
+                double rItterativeSd = Math.Sqrt(RandomItterativesumOfSquaresOfDifferences / randomItterativeMethod.Length);
+
                 greedyMethodMean = greedyMethodMean/itteration;
+                double GreedysumOfSquaresOfDifferences = greedyMethod.Select(val => (val - greedyMethodMean) * (val - greedyMethodMean)).Sum();
+                double GSd = Math.Sqrt(GreedysumOfSquaresOfDifferences / greedyMethod.Length);
+
+
                 greedyItterativeGreedyMean = greedyItterativeGreedyMean/itteration;
+                double GIGsumOfSquaresOfDifferences = greedyItterativeGreedy.Select(val => (val - greedyItterativeGreedyMean) * (val - greedyItterativeGreedyMean)).Sum();
+                double GIGsd = Math.Sqrt(GIGsumOfSquaresOfDifferences / greedyItterativeGreedy.Length);
+
                 greedyItterativeRandomMean = greedyItterativeRandomMean/itteration;
+                double GIRsumOfSquaresOfDifferences = greedyItterativeRandom.Select(val => (val - greedyItterativeRandomMean) * (val - greedyItterativeRandomMean)).Sum();
+                double GIRsd = Math.Sqrt(GIRsumOfSquaresOfDifferences / greedyItterativeRandom.Length);
+
                 greedyItterativeItterativeRandomMean = greedyItterativeItterativeRandomMean/itteration;
+                double GIIRsumOfSquaresOfDifferences = greedyItterativeRandomItterative.Select(val => (val - greedyItterativeItterativeRandomMean) * (val - greedyItterativeItterativeRandomMean)).Sum();
+                double GIIRsd = Math.Sqrt(GIIRsumOfSquaresOfDifferences / greedyItterativeRandomItterative.Length);
+
 
                 /*
                  #### Oppdaterer tekst for beste resultat ####
@@ -218,6 +237,12 @@ namespace ObligEn
                 GreedyItterativeRandomMean.Text = greedyItterativeRandomMean.ToString();
                 GreedyItterativeRandomItterativeMean.Text = greedyItterativeItterativeRandomMean.ToString();
 
+                RandomMethodSd.Text = randomSd.ToString();
+                RandomItterativeSd.Text = rItterativeSd.ToString();
+                GreedySd.Text = GSd.ToString();
+                GreedyImprovedGreedySd.Text = GIGsd.ToString();
+                GreedyImprovedRandomSd.Text = GIRsd.ToString();
+                GreedyImprovedRandomItterativeSd.Text = GIIRsd.ToString();
 
 
 
