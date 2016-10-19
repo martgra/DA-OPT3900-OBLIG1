@@ -246,7 +246,7 @@ namespace ObligEn
                 GreedyImprovedRandomItterativeSd.Text = GIIRsd.ToString();
 
                 using (System.IO.StreamWriter file =
-                new System.IO.StreamWriter(@"C:\Users\JasonBourne\Desktop\New folder\test.txt", true))
+                new System.IO.StreamWriter(@"\test.txt", true))
                 {
                     
                     
